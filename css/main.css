@@ -4,7 +4,7 @@
 body {
   background: #f3f0e8;
   margin: 0;
-  height: 200vh; /* 전체 페이지용 */
+  height: 100vh; /* 전체 페이지용 */
 }
 
 .letter-scene {
