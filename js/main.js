@@ -26,7 +26,7 @@ $(function () {
       scrollTrigger: {
         trigger: ".letter-scene",
         start: "center 50%", // 시작 위치
-        end: "bottom 70%",      // 끝 위치
+        end: "bottom 80%",      // 끝 위치
         scrub: true,
         pin: true
       }
@@ -35,15 +35,15 @@ $(function () {
 
   // 편지 올라오기
   gsap.fromTo(".letter",
-    { y: 414, opacity: 0 }, // 봉투 안에 감춰진 상태
+    { y: 208, opacity: 0 }, // 봉투 안에 감춰진 상태
     {
-      y: -137, opacity: 1,  // 위로 튀어나온 상태
+      y: -150, opacity: 1,  // 위로 튀어나온 상태
       duration: 1.2,
       ease: "power2.out",
       scrollTrigger: {
         trigger: ".letter-scene",
         start: "center 50%",
-        end: "bottom 800%",
+        end: "bottom 80%",
         scrub: true
       }
     }
