@@ -1,40 +1,51 @@
-$(function(){
-gsap.registerPlugin(ScrollTrigger);
+$(function () {
+  gsap.registerPlugin(ScrollTrigger);
 
-let tl = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".envelope-wrap",
-    start: "top 80%",
-    end: "bottom 40%",
-    scrub: true,
-  }
-});
+  // 닫힌 봉투 사라짐
+  gsap.fromTo(".envelope-closed",
+    { opacity: 1 }, // 시작 상태
+    {
+      opacity: 0,   // 끝 상태
+      duration: 0.5,
+      scrollTrigger: {
+        trigger: ".letter-scene",
+        start: "top center",  // 시작 스크롤 위치
+        end: "top 100px",     // 끝 스크롤 위치
+        scrub: true
+      }
+    }
+  );
 
-// 1. 닫힌 봉투에서 뚜껑 열리기
-tl.to(".envelope-flap", {
-  rotationX: -180,
-  transformOrigin: "top center",
-  duration: 1,
-  ease: "power2.inOut"
-})
+  // 뚜껑 열림
+  gsap.fromTo(".envelope-flap",
+    { rotationX: 0, transformOrigin: "top center" }, // 닫힌 상태
+    {
+      rotationX: -180, // 열린 상태
+      duration: 1.2,
+      ease: "power2.inOut",
+      scrollTrigger: {
+        trigger: ".letter-scene",
+        start: "center 50%", // 시작 위치
+        end: "bottom 80%",      // 끝 위치
+        scrub: true,
+        pin: true
+      }
+    }
+  );
 
-
-// 2. 편지 올라오기
-/* 이전 애니메이션 종료 시점 0.4초 전에, 요소를 1.2초 동안 
-부드럽게(power2.out) 위로 180픽셀 이동시키는 애니메이션을 실행 */
-.to(".letter", {
-  opacity: 1, /* 투명도:불투명 */
-  y: -260, /* y축만큼 이동 */
-  duration: 1.2, /* 시작부터 끝까지 완료되는 데 1.2초 */
-  ease: "power2.out" /* 초반에는 빠르게 움직이다가 부드럽고 자연스럽게 속도가 줄어 */
-}, "-=0.4") /* 애니메이션이 타임라인 상의 어느 시점에 시작할지 */
-
-
-// 3. 열린 봉투로 전환
-.to(".envelope-open", {
-  opacity: 1,
-  duration: 0.5
-}, "-=0.5");  
-
-
+  // 편지 올라오기
+  gsap.fromTo(".letter",
+    { y: 208, opacity: 0 }, // 봉투 안에 감춰진 상태
+    {
+      y: -150, opacity: 1,  // 위로 튀어나온 상태
+      duration: 1.2,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: ".letter-scene",
+        start: "center 50%",
+        end: "bottom 80%",
+        scrub: true
+      }
+    }
+  );
 });

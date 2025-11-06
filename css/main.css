@@ -3,10 +3,16 @@
 
 body {
   background: #f3f0e8;
+  margin: 0;
+  height: 200vh; /* 전체 페이지용 */
+}
+
+.letter-scene {
+  height: 100vh; /* 한 화면 고정용 */
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 200vh; /* 스크롤 트리거용 */
+  position: relative;
 }
 
 .envelope-wrap {
@@ -21,15 +27,26 @@ body {
   width: 100%;
 }
 
-/* 초기 상태 설정 */
-.envelope-open,
-.letter {
-  opacity: 0;
- 
-
+/* 초기 상태 */
+.envelope-body {
+  opacity: 1;
 }
 
 .envelope-flap {
-  transform-origin: bottom center;
+  transform-origin: top center; /* 뚜껑이 위로 열림 */
+  z-index: 3;
 }
 
+.letter {
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  width: 100%;
+  transform: translateY(120px); /* 처음엔 봉투 속에 들어가 있음 */
+  z-index: 2;
+}
+
+.envelope-closed {
+  opacity: 1;
+  z-index: 4; /* 처음엔 제일 위 */
+}
