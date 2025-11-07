@@ -5,7 +5,7 @@ $(function () {
   // 편지 애니메이션 (타임라인1)
   let tl = gsap.timeline({
     scrollTrigger: {
-      trigger: ".letter-scene",
+      trigger: ".letter_section",
       start: "top top",
       end: "bottom 0%",
       scrub: true,

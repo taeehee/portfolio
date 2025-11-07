@@ -1,0 +1,36 @@
+@charset "utf-8";
+@import url(main.scss);
+/* root 설정 */
+
+:root {
+    --fontSize-28: 2.8rem;
+    
+}
+
+/* 공통스타일 정리 */
+
+// 믹스인 정의
+@mixin inner-style {
+  max-width: 1520px;
+  width: calc(100% - 56px);
+  margin: 0 auto;
+}/* 그리드 간격 28px*2=56px */
+
+// 각 선택자에 믹스인 적용
+.header .inner,
+.section01 .inner,
+.about .inner,
+.project .inner,
+.design .inner {
+  @include inner-style;
+}
+
+
+
+button {
+    font-family: 'Times New Roman';
+    font-weight: 400;
+    line-height: 140%;
+    border: 0.1rem solid rgb(0, 0, 0, 0.2);
+    background-color: rgb(255, 255, 255, 0.3);
+}
