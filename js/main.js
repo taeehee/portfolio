@@ -1,8 +1,8 @@
 $(function () {
-  // GSAP 플러그인 등록
+
   gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
-  // --- 기존 편지 애니메이션 (TL1) ---
+  // 편지 애니메이션 (타임라인1)
   let tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".letter-scene",
@@ -17,12 +17,12 @@ $(function () {
   tl.fromTo(".envelope-closed", { opacity: 1 }, { opacity: 0, duration: 0.5 })
     .fromTo(".envelope-flap", { rotationX: 0, transformOrigin: "top center" }, { rotationX: -180, duration: 1.5, ease: "power2.inOut", zIndex: 1 })
     .fromTo(".letter", { transformOrigin: "top 90%", opacity: 1 }, { y: -210, opacity: 1, duration: 1.5, ease: "power2.out" });
-  // ------------------------------------
+  // 편지 애니메이션end (타임라인1)
 
  
 
-  /* 새 시작 */
 
+  // 새 애니메이션 (타임라인2)
   gsap.registerPlugin(MotionPathPlugin);
 
 gsap.to("#robin", {
@@ -41,7 +41,8 @@ gsap.to("#robin", {
   repeat: -1,
   repeatDelay: 1.5
 });
+  // 새 애니메이션end (타임라인2)
 
-  /* 새 끝 */
+  
   
 });

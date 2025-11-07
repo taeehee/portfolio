@@ -1,5 +1,10 @@
 @charset "utf-8";
 @import url(reset.css);
+@import url(common.css);
+/* 웹폰트 */
+@import url(/font/Montserrat/stylesheet.css);
+@import url(/font/손글씨_국문_교보2021/stylesheet.css);
+@import url(/font/손글씨_영문Reenie_Beanie/stylesheet.css);
 
 body {
   margin: 0;

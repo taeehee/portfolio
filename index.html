@@ -4,91 +4,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>개인홈페이지</title>
+  <title>강태희</title>
   <link rel="stylesheet" href="css/main.css">
- <style>
-          .cls-1 {
-            fill: #634e3f;
-          }
 
-          .cls-2 {
-            fill: #202123;
-          }
+  <script src="lib/jquery-3.7.1.min.js"></script> <!-- 제이쿼리 -->
 
-          .cls-3 {
-            fill: #42352c;
-          }
-
-          .cls-4 {
-            fill: #ea385c;
-          }
-        </style>
-  <!-- jQuery를 먼저 로드합니다. -->
-  <script src="lib/jquery-3.7.1.min.js"></script>
-  
-  <!-- GSAP + ScrollTrigger -->
-  <!-- GSAP 3 core -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="lib/ScrollTrigger.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
-
-
-
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script> <!-- GSAP -->
+  <script src="lib/ScrollTrigger.min.js"></script> <!-- ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
+  <!-- MotionPathPlugin -->
   <!-- main.js는 jQuery와 GSAP 다음에 로드합니다. (defer 제거) -->
-  <script src="js/main.js"></script>
+  <script src="js/main.js"></script> <!-- js파일 -->
 </head>
 
 
 <body>
+  <div id="wrap">
 
-  <section class="letter-scene">
-    <div class="envelope-wrap">
-      <img src="img/closed.png" class="envelope-closed">
-      <img src="img/body.png" class="envelope-body">
-      <img src="img/flap.png" class="envelope-flap">
-      <img src="img/letter.png" class="letter">
-    </div>
-  </section><!-- letter-scene -->
-  <!-- 메인페이지_편지 -->
+    <header class="header">
+    </header><!-- header -->
 
-
-  <section class="section01">
-     <svg id="robin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 287.67 198.61">
-        <defs>
+    <main class="main">
+      <section class="letter-scene">
+        <div class="envelope-wrap">
+          <img src="img/closed.png" class="envelope-closed">
+          <img src="img/body.png" class="envelope-body">
+          <img src="img/flap.png" class="envelope-flap">
+          <img src="img/letter.png" class="letter">
+        </div>
+      </section><!-- letter-scene -->
+      <!-- 메인페이지_편지 -->
+      <section class="section01">
+        <svg id="robin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 287.67 198.61">
+          <defs>
             <style>
-                .cls-1 {
-                    fill: #634e3f;
-                }
+              .cls-1 {
+                fill: #634e3f;
+              }
 
-                .cls-2 {
-                    fill: #202123;
-                }
+              .cls-2 {
+                fill: #202123;
+              }
 
-                .cls-3 {
-                    fill: #42352c;
-                }
+              .cls-3 {
+                fill: #42352c;
+              }
 
-                .cls-4 {
-                    fill: #ea385c;
-                }
+              .cls-4 {
+                fill: #ea385c;
+              }
             </style>
-        </defs>
-        <title>robin</title>
-        <path id="body" class="cls-1"
+          </defs>
+          <title>robin</title>
+          <path id="body" class="cls-1"
             d="M235.69,107.9c-25.61,3.63-62.29-8.21-73-45.4C153.1,29.34,134.69,0,100.17,0a62.5,62.5,0,0,0-62.5,62.5c0,69,56,133.61,125,136,57.69,2,108.92-22,125-114C287.67,84.5,276.37,102.14,235.69,107.9Z" />
-        <circle id="eye" class="cls-2" cx="91.46" cy="63.17" r="15.14" />
-        <polygon id="beak" class="cls-2" points="40.91 90.13 45.08 67.73 39.92 45.34 0 67.73 40.91 90.13" />
-        <path id="breast" class="cls-4"
+          <circle id="eye" class="cls-2" cx="91.46" cy="63.17" r="15.14" />
+          <polygon id="beak" class="cls-2" points="40.91 90.13 45.08 67.73 39.92 45.34 0 67.73 40.91 90.13" />
+          <path id="breast" class="cls-4"
             d="M44.19,103.38c13.14,40.79,45,75.19,84.84,88.86,4.26-17.4-.85-39.91-15.21-59.41C94.52,106.61,65.06,94.72,44.19,103.38Z" />
-        <path id="wing" class="cls-3"
+          <path id="wing" class="cls-3"
             d="M268.46,127.43c-11.47,33-49,50.94-91.8,45.34-23.45-3.07-42.82-19.17-42.82-42.82a42.82,42.82,0,0,1,42.82-42.82c25.75,0,37.58,14.5,57,26.86C255.58,128,268.46,127.43,268.46,127.43Z" />
-    </svg>
-  </section><!-- section01 -->
-  <!-- 날아가는 새 -->
+        </svg>
+      </section><!-- section01 -->
+      <!-- 날아가는 새 -->
+    </main><!-- main -->
 
+    <footer class="footer">
 
-  <div style="height: 100vh;"></div> 
+    </footer><!-- footer -->
+
+  </div><!-- #wrap -->
+
 </body>
 
 </html>
