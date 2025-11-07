@@ -1,51 +1,43 @@
 $(function () {
   gsap.registerPlugin(ScrollTrigger);
 
-  // 닫힌 봉투 사라짐
-  gsap.fromTo(".envelope-closed",
-    { opacity: 1 }, // 시작 상태
+  // 전체 애니메이션을 위한 타임라인 생성
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".letter-scene",
+      start: "top top", // .letter-scene의 상단이 뷰포트의 상단에 닿을 때 시작
+      end: "bottom 0%", // .letter-scene의 하단이 뷰포트의 상단에 닿을 때 끝
+      scrub: true,
+      pin: true, // .letter-scene 컨테이너를 화면에 고정
+      markers: true
+    }
+  });
+
+  // 애니메이션 순서를 타임라인에 추가
+  // 기존 애니메이션에서 pin: true 속성을 제거
+  tl.fromTo(".envelope-closed",
+    { opacity: 1 },
     {
-      opacity: 0,   // 끝 상태
+      opacity: 0,
       duration: 0.5,
-      scrollTrigger: {
-        trigger: ".letter-scene",
-        start: "top center",  // 시작 스크롤 위치
-        end: "top 100px",     // 끝 스크롤 위치
-        scrub: true
-      }
-    }
-  );
-
-  // 뚜껑 열림
-  gsap.fromTo(".envelope-flap",
-    { rotationX: 0, transformOrigin: "top center" }, // 닫힌 상태
+    },
+  )
+  .fromTo(".envelope-flap",
+    { rotationX: 0, transformOrigin: "top center" },
     {
-      rotationX: -180, // 열린 상태
-      duration: 1.2,
+      rotationX: -180,
+      duration: 1.5,
       ease: "power2.inOut",
-      scrollTrigger: {
-        trigger: ".letter-scene",
-        start: "center 50%", // 시작 위치
-        end: "bottom 80%",      // 끝 위치
-        scrub: true,
-        pin: true
-      }
-    }
-  );
-
-  // 편지 올라오기
-  gsap.fromTo(".letter",
-    { y: 208, opacity: 0 }, // 봉투 안에 감춰진 상태
+      zIndex: 1,
+    },
+  )
+  .fromTo(".letter",
+    { transformOrigin: "top 90%", opacity: 1 },
     {
-      y: -150, opacity: 1,  // 위로 튀어나온 상태
-      duration: 1.2,
+      y: -210, opacity: 1,
+    
+      duration: 1.5,
       ease: "power2.out",
-      scrollTrigger: {
-        trigger: ".letter-scene",
-        start: "center 50%",
-        end: "bottom 80%",
-        scrub: true
-      }
-    }
+    },
   );
 });
