@@ -3,18 +3,17 @@
 
 body {
   margin: 0;
-  height: 200vh; /* 전체 페이지용 */
 }
 
-  .letter-scene {
-  height: 100vh;
+.letter-scene {
+  height: 100vh; /* 화면 높이만큼 공간 확보 */
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed; /* 추가 */
-  width: 100%; /* 추가 */
-  top: 0; /* 추가 */
-  left: 0; /* 추가 */
+  /* position: fixed; <-- 이 코드를 제거합니다! */
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 
 .envelope-wrap {
@@ -30,11 +29,11 @@ body {
 }
 
 .envelope-wrap img:nth-child(4) {
-    width: 90%;
-    position: absolute;
+  width: 90%;
+  position: absolute;
   left: 20px;
   /* transform: translate(-50%,-50%); */
-    
+
 }
 
 /* 초기 상태 */
@@ -44,8 +43,10 @@ body {
 }
 
 .envelope-flap {
-  transform-origin: top center; /* 뚜껑이 위로 열림 */
-  z-index: 3; /* 제일 위 */
+  transform-origin: top center;
+  /* 뚜껑이 위로 열림 */
+  z-index: 3;
+  /* 제일 위 */
 }
 
 .letter {
@@ -56,8 +57,17 @@ body {
   z-index: 1;
 }
 
-
 .envelope-closed {
   opacity: 1;
-  z-index: 4; 
+  z-index: 4;
 }
+/* 편지 */
+
+
+/* 날아가는 새 */
+ 
+
+    #robin {
+            width: 8em;
+        }
+/* 날아가는 새 end */
