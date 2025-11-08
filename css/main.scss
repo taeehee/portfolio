@@ -97,8 +97,79 @@ body {
     opacity: 1;
     z-index: 4;
 }
-
 /* 편지end*/
+
+/* reveal text효과 */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+// Base
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  display: block;
+  height: auto;
+  min-height: 100%;
+  width: 100%;
+  font-size: clamp(16px, 2vw, 24px);
+  line-height: 1.4;
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  background-image: linear-gradient(to right, #2F586A, #1E121C);
+}
+
+body {
+  display: block;
+  min-height: 100vh;
+  overflow: hidden;
+} 
+
+// Smooth scroll
+.lenis {
+  &.lenis-smooth {
+    scroll-behavior: auto;
+
+    [data-lenis-prevent] {
+      overscroll-behavior: contain;
+    }
+  }
+
+  &.lenis-stopped {
+    overflow: hidden;
+  }
+
+  &.lenis-scrolling iframe {
+    pointer-events: none;
+  }
+}
+
+// Layout
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  position: relative;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+// Reveal
+.reveal {
+  font-kerning: none;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 1.4rem;
+  line-height: 1.4;
+}
+/* reveal text 효과 end */
 
 
 
@@ -108,3 +179,61 @@ body {
 }
 
 /* 날아가는 새 end */
+
+
+/* 새가 편지를 물고 날아감 */
+.section03 {
+  background: #f3f0e8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200vh; /* 스크롤 효과용 */
+}
+
+.envelope-scene {
+  position: relative;
+  width: 400px;
+  height: 500px;
+}
+
+.envelope-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  width: 50%; /* 작은 사이즈 편지 */
+
+  img {
+    position: absolute;
+    width: 100%;
+    left: 0;
+  }
+}
+
+.envelope-flap {
+  transform-origin: top center;
+}
+
+.envelope-open,
+.letter {
+  opacity: 0;
+}
+
+/* 새 */
+.bird-wrap {
+  position: fixed;
+  top: 45%;
+  left: -100px;
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.bird {
+  width: 3rem;
+  height: auto;
+  transform-origin: center;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* 새가 편지를 물고 날아감 end */
